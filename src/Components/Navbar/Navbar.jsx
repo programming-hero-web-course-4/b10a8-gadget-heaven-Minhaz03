@@ -10,17 +10,17 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a>Statistics</a>
+        <a className="text-black">Statistics</a>
       </li>
       <li>
-        <a>Dashboard</a>
+        <a className="text-black">Dashboard</a>
       </li>
     </>
   );
 
   return (
     <section>
-      <div className="navbar bg-[#9538E2] mt-5 text-white rounded-lg px-10">
+      <div className="navbar bg-[#9538E2] mt-5 text-white rounded-lg md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

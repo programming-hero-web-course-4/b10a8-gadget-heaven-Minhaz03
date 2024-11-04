@@ -9,7 +9,6 @@ const Root = () => {
     <section>
       <div className="max-w-screen-2xl mx-auto">
         <Navbar></Navbar>
-        <HeroBanner></HeroBanner>
         <Outlet></Outlet>
         <Footer></Footer>
       </div>
