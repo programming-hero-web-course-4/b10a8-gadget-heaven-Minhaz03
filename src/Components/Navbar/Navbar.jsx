@@ -10,10 +10,13 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a className="text-black">Statistics</a>
+        <a className="text-black lg:text-white">Statistics</a>
       </li>
       <li>
-        <a className="text-black">Dashboard</a>
+        <a className="text-black lg:text-white">Dashboard</a>
+      </li>
+      <li>
+        <a className="text-black lg:text-white">Feedback & Reviews</a>
       </li>
     </>
   );

@@ -1,6 +1,6 @@
 [
     {
-        "product_id": "P001",
+        "product_id": "001",
         "product_title": "Apple iPhone 15 Pro Max",
         "product_image": "https://i.ibb.co.com/N6cfBqb/Apple-i-Phone-15-Pro-lineup-color-lineup-230912-big-jpg-large-2x.jpg",
         "category": "Smartphones",
@@ -17,7 +17,7 @@
         "other_field": "5G compatible"
     },
     {
-        "product_id": "P002",
+        "product_id": "002",
         "product_title": "Samsung Galaxy S24 Ultra",
         "product_image": "https://i.ibb.co.com/PFR9C0Y/Samsung-Galaxy-S24-Ultra-renders-1024x653.jpg",
         "category": "Smartphones",
@@ -34,7 +34,7 @@
         "other_field": "Water resistant"
     },
     {
-        "product_id": "P003",
+        "product_id": "003",
         "product_title": "Apple Watch Series 9",
         "product_image": "https://i.ibb.co.com/phBsWnS/Apple-Watch-Series-9-release-date-price-features-and-news.jpg",
         "category": "Smartwatches",
@@ -51,7 +51,7 @@
         "other_field": "Blood oxygen monitoring"
     },
     {
-        "product_id": "P004",
+        "product_id": "004",
         "product_title": "Samsung Galaxy Watch6 Classic",
         "product_image": "https://i.ibb.co.com/xfBq9WS/001-galaxy-watch6-watch6-classic-combo-kv.jpg",
         "category": "Smartwatches",
@@ -68,7 +68,7 @@
         "other_field": "Blood pressure monitoring"
     },
     {
-        "product_id": "P005",
+        "product_id": "005",
         "product_title": "Sony PlayStation 5",
         "product_image": "https://i.ibb.co.com/GQdzXjW/wp6919915.jpg",
         "category": "Gaming Consoles",
@@ -85,7 +85,7 @@
         "other_field": "4K gaming"
     },
     {
-        "product_id": "P006",
+        "product_id": "006",
         "product_title": "Nintendo Switch OLED",
         "product_image": "https://i.ibb.co.com/6bg2xKV/nintendo-switch-oled-set-03.jpg",
         "category": "Gaming Consoles",
@@ -102,7 +102,7 @@
         "other_field": "Hybrid console"
     },
     {
-        "product_id": "P007",
+        "product_id": "007",
         "product_title": "Dell XPS 13",
         "product_image": "https://i.ibb.co.com/c3Sktjj/wtrz-Syt6-TECJib-GAt7v-SMP.jpg",
         "category": "Laptops",
@@ -119,7 +119,7 @@
         "other_field": "Thin and light design"
     },
     {
-        "product_id": "P008",
+        "product_id": "008",
         "product_title": "MacBook Air M2",
         "product_image": "https://i.ibb.co.com/YhZhXtp/macbook-air-m2.jpg",
         "category": "Laptops",
@@ -136,7 +136,7 @@
         "other_field": "MagSafe charging"
     },
     {
-        "product_id": "P009",
+        "product_id": "009",
         "product_title": "Sony WH-1000XM5",
         "product_image": "https://i.ibb.co.com/bNgFbGX/isolated-sony-wh-1000xm5-wireless-headphones-front-view-featuring-white-background-clean-655090-8010.jpg",
         "category": "Headphones",
@@ -153,7 +153,7 @@
         "other_field": "Comfortable fit"
     },
     {
-        "product_id": "P010",
+        "product_id": "010",
         "product_title": "Apple AirPods Pro (2nd generation)",
         "product_image": "https://i.ibb.co.com/PNDNhqC/2022239-airpods-geek-culture.jpg",
         "category": "Headphones",
@@ -170,7 +170,7 @@
         "other_field": "Sweat and water resistant"
     },
     {
-        "product_id": "P011",
+        "product_id": "011",
         "product_title": "Samsung Galaxy Tab S9 Ultra",
         "product_image": "https://i.ibb.co.com/fHNRwrw/samsung-galaxy-tab-s9-ultra-plants.jpg",
         "category": "Tablets",
@@ -187,7 +187,7 @@
         "other_field": "Slim and lightweight"
     },
     {
-        "product_id": "P012",
+        "product_id": "012",
         "product_title": "iPad Pro (2022)",
         "product_image": "https://i.ibb.co.com/NCjHnrn/840-560.jpg",
         "category": "Tablets",
@@ -204,7 +204,7 @@
         "other_field": "Face ID"
     },
     {
-        "product_id": "P013",
+        "product_id": "013",
         "product_title": "Sony A7 IV",
         "product_image": "https://i.ibb.co.com/hYN8BQW/DSC09703-acr.jpg",
         "category": "Cameras",
@@ -221,7 +221,7 @@
         "other_field": "Weather-sealed body"
     },
     {
-        "product_id": "P014",
+        "product_id": "014",
         "product_title": "DJI Mavic 3 Pro",
         "product_image": "https://i.ibb.co.com/SfTsrFc/dji-mavic-3-pro.jpg",
         "category": "Drones",
@@ -238,7 +238,7 @@
         "other_field": "4K/60fps video recording"
     },
     {
-        "product_id": "P015",
+        "product_id": "015",
         "product_title": "Apple HomePod (2nd generation)",
         "product_image": "https://i.ibb.co.com/9rqrcN3/gsmarena-001.jpg",
         "category": "Smart Speakers",
@@ -255,7 +255,7 @@
         "other_field": "Multi-room audio"
     },
     {
-        "product_id": "P016",
+        "product_id": "016",
         "product_title": "Sonos Roam",
         "product_image": "https://i.ibb.co.com/bzcDx5L/sonos-roam-3.webp",
         "category": "Smart Speakers",
@@ -272,7 +272,7 @@
         "other_field": "Long battery life"
     },
     {
-        "product_id": "P017",
+        "product_id": "017",
         "product_title": "Logitech G Pro X Superlight",
         "product_image": "https://i.ibb.co.com/xgMtddZ/Logitech-G-Pro-X-Superlight-Left-Side-Profile.png",
         "category": "Gaming Mice",
@@ -289,7 +289,7 @@
         "other_field": "Ergonomic design"
     },
     {
-        "product_id": "P018",
+        "product_id": "018",
         "product_title": "Razer Viper V2 Pro",
         "product_image": "https://i.ibb.co.com/GCRJmNW/Vji-DKY7-Xz-Xa9xwu-R7-Kc9x-Y-1200-80.jpg",
         "category": "Gaming Mice",
@@ -306,7 +306,7 @@
         "other_field": "Customizable RGB lighting"
     },
     {
-        "product_id": "P019",
+        "product_id": "019",
         "product_title": "Apple Pencil (2nd generation)",
         "product_image": "https://i.ibb.co.com/pwV8N6n/gt-M7-Nxe-LTCj-HAi-JUxghs-JK.jpg",
         "category": "Accessories",
@@ -323,7 +323,7 @@
         "other_field": "Low-latency performance"
     },
     {
-        "product_id": "P020",
+        "product_id": "020",
         "product_title": "Anker PowerCore 20000 PD",
         "product_image": "https://i.ibb.co.com/54HJKH7/6-7.webp",
         "category": "Accessories",
@@ -340,7 +340,7 @@
         "other_field": "Compact and lightweight"
     },
     {
-        "product_id": "P021",
+        "product_id": "021",
         "product_title": "Apple iPhone 16 Pro Max",
         "product_image": "https://i.ibb.co.com/crCyZkM/Apple-i-Phone-16-Pro-Max-release-date-predictions-price-specs-and-expected-upgrades.jpg", 
         "category": "Smartphones",

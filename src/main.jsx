@@ -9,14 +9,14 @@ import {
 import Root from './Components/Root/Root.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
-import HeroBanner from './Components/HeroBanner/HeroBanner.jsx';
+// import HeroBanner from './Components/HeroBanner/HeroBanner.jsx';
 import GadgetDetail from './Components/GadgetDetail/GadgetDetail.jsx';
 import Statistics from './Components/Statistics/Statistics.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 
 
 const router = createBrowserRouter([
-  {
+  { 
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: 'statistics',
+        path: '/statistics',
         element: <Statistics></Statistics>
       },
       {
@@ -35,7 +35,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/gadgets/:product_id',
-        element: <GadgetDetail></GadgetDetail>
+        element: <GadgetDetail></GadgetDetail>,
+        loader: () => fetch('/gadgetData.json')
       }
     ]
   },

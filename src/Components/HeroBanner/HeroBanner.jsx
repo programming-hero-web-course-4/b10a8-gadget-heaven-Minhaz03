@@ -16,7 +16,7 @@ const HeroBanner = () => {
       <div className="relative top-[50px]">
         <div className="border-2 border-dotted p-5  mx-auto rounded-xl overflow-hidden shadow-lg ">
           <img
-            src="/public/assets/banner.jpg" // Replace with your image URL
+            src="/assets/banner.jpg" // Replace with your image URL
             alt="VR Headset"
             className="w-5/ lg:w-[1062px] lg:h-[563px] rounded-xl"
           />
