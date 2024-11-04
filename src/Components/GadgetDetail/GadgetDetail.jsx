@@ -1,5 +1,7 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { FaOpencart } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
 
 const GadgetDetail = () => {
   const { product_id } = useParams();
@@ -14,13 +16,23 @@ const GadgetDetail = () => {
   //   console.log(product, data, product_id, id)
   //   console.log({ gadget, data, product_id, id });
 
-  const { product_title, price, description, product_image } = gadget || {};
+  const {
+    product_title,
+    price,
+    description,
+    product_image,
+    rating,
+    availability,
+    specification,
+  } = gadget || {};
   console.log(gadget);
 
   return (
     <div>
       <div className="p-6 bg-[#9538E2] rounded-xl">
-        <h2 className="text-center text-white font-bold text-3xl mt-[100px]">Product Details</h2>
+        <h2 className="text-center text-white font-bold text-3xl mt-[100px]">
+          Product Details
+        </h2>
         <p className="my-10 text-center text-white font-bold text-xl">
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
@@ -41,16 +53,22 @@ const GadgetDetail = () => {
             <p className="text-2xl font-semibold text-green-500 mt-2">
               ${price}
             </p>
-            <div className="badge badge-success my-2">In Stock</div>
-            <p className="text-gray-600 mt-4">{description}</p>
+            <div className="badge p-4 bg-[#309C081A] badge-success my-2">
+              In Stock
+            </div>
+            <p className="text-gray-600 text-base mt-4">{description}</p>
 
-            <h3 className="text-lg font-semibold mt-4">Specification:</h3>
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-              <li>Intel i7 11th Gen</li>
-              <li>16GB RAM</li>
-              <li>512GB SSD</li>
-              <li>Touchscreen</li>
-            </ul>
+            <h3 className="text-lg font-semibold mt-4">
+              Specifications:
+              {specification.map((spec, idx) => (
+                <ul
+                  key={idx}
+                  className="list-disc list-inside text-gray-700 mt-2 space-y-1"
+                >
+                  <li>{spec}</li>
+                </ul>
+              ))}
+            </h3>
 
             <div className="flex items-center mt-4">
               <div className="rating">
@@ -80,13 +98,19 @@ const GadgetDetail = () => {
                   className="mask mask-star-2 bg-gray-400"
                 />
               </div>
-              <span className="ml-2 text-gray-600">4.8</span>
+              <span className="ml-2 text-black bg-[#09080F0D] rounded-lg p-2 font-bold">
+                {rating}
+              </span>
             </div>
 
-            <button className="btn btn-primary mt-4 w-full md:w-auto">
-              Add To Cart
-            </button>
+            {/* button add to cart */}
+            <Link>
+              <button className="btn text-white rounded-full bg-[#9538E2] hover:bg-[#9538E2] mt-4 w-full md:w-auto">
+                Add To Cart <FaOpencart className="ml- text-3xl" />
+              </button>
+            </Link>
           </div>
+          <FaRegHeart className="text-3xl text-[#9538E2] rounded-full" />
         </div>
       </div>
     </div>
