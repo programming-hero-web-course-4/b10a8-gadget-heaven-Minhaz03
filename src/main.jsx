@@ -15,6 +15,7 @@ import SelectedGadgets from "./Components/SelectedGadgets/SelectedGadgets.jsx";
 import FeedbackReviews from "./Components/FeedbackReviews/FeedbackReviews.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -56,27 +57,18 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <App /> */}
     <RouterProvider router={router} />
+    {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
     <ToastContainer
       position={"top-center"}
       pauseOnHover={false}
       pauseOnFocusLoss={false}
       autoClose={1000}
     />
-    <dialog id="modal" className="modal modal-bottom sm:modal-middle">
-      <div className="modal-box">
-        <h3 className="font-bold text-lg">Hello!</h3>
-        <p className="py-4">Press ESC key or click the button below to close</p>
-        <div className="modal-action">
-          <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn">Close</button>
-          </form>
-        </div>
-      </div>
-    </dialog>
   </StrictMode>
 );
+
