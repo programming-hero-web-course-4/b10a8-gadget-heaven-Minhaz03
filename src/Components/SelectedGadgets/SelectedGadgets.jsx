@@ -3,6 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getStoredGadgetAtAddToCart, getStoredGadgetToWishlist } from "../Utility/addToDb";
+import Gadget from "../Gadget/Gadget";
+import SelectGadget from "../SelectGadget/SelectGadget";
+import WishlistGadget from "../WishlistGadget/WishlistGadget";
+import { toast } from "react-toastify";
 
 const SelectedGadgets = () => {
   const [addToCart, setAddToCart] = useState([]);
@@ -39,6 +43,8 @@ const SelectedGadgets = () => {
     setWishlist(gadgetWishlist);
   }, []);
 
+  const notify = () => toast.success("Congratulation Product Purchased Successfully");
+
   return (
     <div>
       <div className="bg-[#9538E2] p-10 rounded-lg mb-10">
@@ -67,13 +73,31 @@ const SelectedGadgets = () => {
         </TabList>
 
         <TabPanel className="mt-10 font-bold text-2xl">
-          <h2>Gadgets Added To Cart: {addToCart.length}</h2>
-          <div className="mt-5">
-            
+          <div className="flex flex-col md:flex-row justify-between">
+            <h2 className="text-2xl font-bold">Cart</h2>
+            <div className="flex flex-col md:flex-row gap-4 text-center items-center">
+              {/*  */}
+              <h2>Total Cost: $ 0</h2>
+              {/*  */}
+              <button className="btn text-xl bg-white text-fuchsia-400 ml-3">Sort By Price</button>
+              {/*  */}
+              <button onClick={notify} className="btn text-xl bg-fuchsia-400 text-white">Purchase</button>
+              {/*  */}
+            </div>
+          </div>
+          <div className="mt-5 space-y-8">
+            {
+              addToCart.map(gadget => <SelectGadget key={gadget.product_id} gadget={gadget}></SelectGadget>)
+            }
           </div>
         </TabPanel>
         <TabPanel className="mt-10 font-bold text-2xl">
-          <h2>Gadgets Added To Wishlist: {wishlist.length}</h2>
+          {/* <h2>Gadgets Added To Wishlist: {wishlist.length}</h2> */}
+          <div className="mt-5 space-y-8">
+            {
+              wishlist.map(gadget => <WishlistGadget key={gadget.product_id} gadget={gadget}></WishlistGadget>)
+            }
+          </div>
         </TabPanel>
       </Tabs>
     </div>

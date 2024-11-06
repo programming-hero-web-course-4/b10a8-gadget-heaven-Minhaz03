@@ -14,7 +14,7 @@ const Banner = () => {
         {/* Sidebar */} 
         <div className="w-full md:w-1/4 lg:w-1/5 p-4"> 
           <ul className="space-y-4"> 
-            {["All Product", "Laptops", "Phones", "Accessories", "Smart Watches", "MacBook", "iPhone"].map((category) => ( 
+            {["All Product", "Laptops", "Phones", "Accessories", "Smart Watches", "Headphones", "Tablets", "Cameras", "Gaming Consoles", "Gaming Mice"].map((category) => ( 
               <li key={category}> 
                 <button 
                   onClick={() => handleSelectedCategory(category)} 
