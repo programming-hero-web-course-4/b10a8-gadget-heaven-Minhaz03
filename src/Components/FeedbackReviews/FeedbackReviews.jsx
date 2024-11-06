@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
 
 const FeedbackReviews = () => {
+  const handleDone = () => {
+    toast.success("Feedback Sended Successfully");
+  }
 
   return (
     <Link to="/feedbackReviews">
@@ -46,7 +49,12 @@ const FeedbackReviews = () => {
         <div className="space-y-5">
           <label className="input input-bordered flex items-center gap-2">
             Name
-            <input type="text" className="grow" placeholder="Your Name" />
+            <input
+              type="text"
+              is="required"
+              className="grow"
+              placeholder="Your Name"
+            />
           </label>
           <label className="input input-bordered flex items-center gap-2">
             Email
@@ -57,10 +65,7 @@ const FeedbackReviews = () => {
             className="textarea textarea-bordered textarea-lg w-full max-w-xs"
           ></textarea>
         </div>
-
-        <button className="btn mt-2">
-          Done
-        </button>
+        <button onClick={handleDone} className="btn mt-2">Done</button>
       </div>
     </Link>
   );

@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { getStoredGadgetAtAddToCart, getStoredGadgetToWishlist } from "../Utility/addToDb";
+import {
+  getStoredGadgetAtAddToCart,
+  getStoredGadgetToWishlist,
+} from "../Utility/addToDb";
 import Gadget from "../Gadget/Gadget";
 import SelectGadget from "../SelectGadget/SelectGadget";
 import WishlistGadget from "../WishlistGadget/WishlistGadget";
@@ -11,27 +14,29 @@ import { toast } from "react-toastify";
 const SelectedGadgets = () => {
   const [addToCart, setAddToCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-  // console.log(addToCart);
+  const [sorted, setSorted] = useState(false);
   const allGadgets = useLoaderData();
-    // console.log(allGadgets)
+  const [tabIndex, setTabIndex] = useState(0);
+  // console.log(allGadgets)
 
   useEffect(() => {
     const storedAddToCart = getStoredGadgetAtAddToCart();
     const storedWishlist = getStoredGadgetToWishlist();
     // console.log(setAddToCart)
-    const storedAddToCartInt = storedAddToCart.map((id) => (id));
-    const storedWishlistInt = storedWishlist.map((id) => (id));
-    // console.log(storedAddToCartInt);
+    const storedAddToCartInt = storedAddToCart.map((id) => id);
+    const storedWishlistInt = storedWishlist.map((id) => id);
 
     const gadgetAddToCart = allGadgets.filter((product) =>
       storedAddToCartInt.includes(product.product_id)
-  );
+    );
 
     const gadgetWishlist = allGadgets.filter((product) =>
       storedWishlistInt.includes(product.product_id)
-  );
+    );
 
-  // console.log(gadgetAddToCart);
+    console.log(storedAddToCart);
+
+    // console.log(gadgetAddToCart);
 
     // const gadgetAddToCart = allGadgets.filter((gadget) =>
     //   storedAddToCartInt.includes(gadget.product_id)
@@ -43,7 +48,17 @@ const SelectedGadgets = () => {
     setWishlist(gadgetWishlist);
   }, []);
 
-  const notify = () => toast.success("Congratulation Product Purchased Successfully");
+  let totalCartPrice = addToCart.reduce((acc, item) => acc + item.price, 0);
+  const displayedItems = sorted
+    ? [...addToCart].sort((a, b) => b.price - a.price)
+    : addToCart;
+
+  const handlePurchase = () => {
+    toast.success("Congratulation Product Purchased Successfully");
+    setAddToCart([]);
+    document.getElementById("modal").showModal();
+    totalCartPrice = 0;
+  };
 
   return (
     <div>
@@ -66,7 +81,11 @@ const SelectedGadgets = () => {
         </div> */}
       </div>
 
-      <Tabs className="text-center font-extrabold text-2xl">
+      <Tabs
+        selectedIndex={tabIndex}
+        onSelect={(index) => setTabIndex(index)}
+        className="text-center font-extrabold text-2xl"
+      >
         <TabList>
           <Tab>Add To Cart</Tab>
           <Tab>Wishlist</Tab>
@@ -77,26 +96,69 @@ const SelectedGadgets = () => {
             <h2 className="text-2xl font-bold">Cart</h2>
             <div className="flex flex-col md:flex-row gap-4 text-center items-center">
               {/*  */}
-              <h2>Total Cost: $ 0</h2>
+              <h2>Total Cost: $ {totalCartPrice}</h2>
               {/*  */}
-              <button className="btn text-xl bg-white text-fuchsia-400 ml-3">Sort By Price</button>
+              <button
+                onClick={() => setSorted(!sorted)}
+                className={`btn text-xl bg-white text-fuchsia-400 ml-3 ${
+                  sorted ? "bg-red-500 text-white" : ""
+                }`}
+              >
+                Sort By Price
+              </button>
+              <dialog id="modal" className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                  <img src="/assets/fax-1889045_1280.jpg" alt="" />
+                  <h3 className="font-bold text-2xl">Payment Successful</h3>
+                  <p className="py-4 text-base">
+                    Thanks for purchasing
+                  </p>
+                  <p className="py-4 text-base">
+                    You're Welcome, If Need Anything Visit Our Site.
+                  </p>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      
+                        <button className="btn">Close</button>
+                      
+                    </form>
+                  </div>
+                </div>
+              </dialog>
               {/*  */}
-              <button onClick={notify} className="btn text-xl bg-fuchsia-400 text-white">Purchase</button>
+              <button
+                onClick={handlePurchase}
+                className="btn text-xl bg-fuchsia-400 text-white"
+              >
+                Purchase
+              </button>
               {/*  */}
             </div>
           </div>
           <div className="mt-5 space-y-8">
-            {
-              addToCart.map(gadget => <SelectGadget key={gadget.product_id} gadget={gadget}></SelectGadget>)
-            }
+            {displayedItems.map((gadget) => (
+              <SelectGadget
+                addToCart={addToCart}
+                setAddToCart={setAddToCart}
+                key={gadget.product_id}
+                gadget={gadget}
+              ></SelectGadget>
+            ))}
           </div>
         </TabPanel>
         <TabPanel className="mt-10 font-bold text-2xl">
           {/* <h2>Gadgets Added To Wishlist: {wishlist.length}</h2> */}
           <div className="mt-5 space-y-8">
-            {
-              wishlist.map(gadget => <WishlistGadget key={gadget.product_id} gadget={gadget}></WishlistGadget>)
-            }
+            {wishlist.map((gadget) => (
+              <WishlistGadget
+                wishlist={wishlist}
+                setTabIndex={setTabIndex}
+                setWishlist={setWishlist}
+                key={gadget.product_id}
+                gadget={gadget}
+              ></WishlistGadget>
+            ))}
           </div>
         </TabPanel>
       </Tabs>
