@@ -1,19 +1,28 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 
 const Navbar = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="text-black lg:text-white" to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <a className="text-black lg:text-white">Statistics</a>
+        <NavLink to="/statistics" className="text-black lg:text-white">
+          Statistics
+        </NavLink>
       </li>
       <li>
-        <a className="text-black lg:text-white">Dashboard</a>
+        <NavLink to="/selectedGadgets" className="text-black lg:text-white">
+          Dashboard
+        </NavLink>
       </li>
       <li>
         <a className="text-black lg:text-white">Feedback & Reviews</a>
@@ -23,7 +32,11 @@ const Navbar = () => {
 
   return (
     <section>
-      <div className="navbar bg-[#9538E2] mt-5 text-white rounded-lg md:px-10">
+      <div
+        className={`${
+          pathname === "/" ? "bg-[#9538E2]" : "bg-gray-300"
+        } navbar  mt-5 text-white rounded-lg md:px-10`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,8 +68,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-5">
-        <CiShoppingCart className="text-2xl" />
-        <FaRegHeart className="text-2xl" />
+          <CiShoppingCart className="text-2xl" />
+          <FaRegHeart className="text-2xl" />
         </div>
       </div>
     </section>

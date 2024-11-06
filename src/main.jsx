@@ -13,6 +13,8 @@ import Home from './Components/Home/Home.jsx';
 import GadgetDetail from './Components/GadgetDetail/GadgetDetail.jsx';
 import Statistics from './Components/Statistics/Statistics.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import AddToCart from './Components/AddToCart/AddToCart.jsx';
+import SelectedGadgets from './Components/SelectedGadgets/SelectedGadgets.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,15 +31,24 @@ const router = createBrowserRouter([
         path: '/statistics',
         element: <Statistics></Statistics>
       },
-      {
-        path: 'dashboard',
-        element: <Dashboard></Dashboard>
-      },
+      // {
+      //   path: 'dashboard',
+      //   element: <Dashboard></Dashboard>
+      // },
       {
         path: '/gadgets/:product_id',
         element: <GadgetDetail></GadgetDetail>,
         loader: () => fetch('/gadgetData.json')
-      }
+      },
+      {
+        path: 'selectedGadgets',
+        element: <SelectedGadgets></SelectedGadgets>,
+        loader: () => fetch('/gadgetData.json')
+      },
+      // {
+      //   path: '/addCart',
+      //   element: <AddToCart></AddToCart>
+      // }
     ]
   },
 ]);

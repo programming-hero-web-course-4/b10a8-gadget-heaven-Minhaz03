@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaOpencart } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
+import { addGadgetToCart, addGadgetToWishlist } from "../Utility/addToDb";
 
 const GadgetDetail = () => {
   const { product_id } = useParams();
@@ -16,16 +17,23 @@ const GadgetDetail = () => {
   //   console.log(product, data, product_id, id)
   //   console.log({ gadget, data, product_id, id });
 
+  const handleAddToCart = (id) => {
+    addGadgetToCart(id);
+  }
+
+  const handleWishlist = (id) => {
+    addGadgetToWishlist(id);
+  }
+
   const {
     product_title,
     price,
     description,
     product_image,
     rating,
-    availability,
     specification,
   } = gadget || {};
-  console.log(gadget);
+  // console.log(gadget);
 
   return (
     <div>
@@ -104,13 +112,20 @@ const GadgetDetail = () => {
             </div>
 
             {/* button add to cart */}
-            <Link>
+            <Link onClick={()=> handleAddToCart(product_id)} to="/selectedGadgets"> 
+            {/* to="/addCart" */}
               <button className="btn text-white rounded-full bg-[#9538E2] hover:bg-[#9538E2] mt-4 w-full md:w-auto">
                 Add To Cart <FaOpencart className="ml- text-3xl" />
               </button>
             </Link>
           </div>
-          <FaRegHeart className="text-3xl text-[#9538E2] rounded-full" />
+
+
+          <Link onClick={()=> handleWishlist(product_id)} to="/selectedGadgets">
+            <FaRegHeart className="ml-[100px] mt-[50px] md:ml-0 md:mt-0 text-3xl text-[#9538E2] rounded-full" />
+          </Link>
+
+
         </div>
       </div>
     </div>

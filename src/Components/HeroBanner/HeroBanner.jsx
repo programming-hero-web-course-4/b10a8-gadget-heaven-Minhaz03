@@ -22,6 +22,9 @@ const HeroBanner = () => {
           />
         </div>
       </div>
+      <div className="text-center mt-[50px] md:mt-[90px] font-bold text-3xl">
+        <h2>Explore Cutting-Edge Gadgets</h2>
+      </div>
     </div>
   );
 };
